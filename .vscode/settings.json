@@ -1,0 +1,4 @@
+{
+  "python.analysis.extraPaths": ["./Partial Implementation/DeafMuteScreen"],
+  "python.linting.enabled": true
+}
