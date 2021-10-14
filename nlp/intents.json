@@ -3,12 +3,12 @@
     {
       "tag": "articles",
       "patterns": ["a", "an", "the"],
-      "responses": [""]
+      "responses": ["", ""]
     },
     {
       "tag": "conjunctions",
       "patterns": ["for", "and", "nor", "but", "or", "yet", "so"],
-      "responses": [""]
+      "responses": ["", ""]
     }
   ]
 }

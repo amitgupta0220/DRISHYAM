@@ -22,7 +22,7 @@ while(cap.isOpened()):
     cv2.imshow('Frame', edges)
     cv2.imshow('Frame2', edges1)
     cv2.imshow('Frame3', edges2)
-    # cv2.imshow('Frame3', blur)
+    # cv2.imshow('Frame3', frame)
     if cv2.waitKey(25) & 0xFF == ord('q'):
       break
   else: 

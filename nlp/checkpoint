@@ -1,2 +1,2 @@
-model_checkpoint_path: "d:\\Amit\\Projects\\Final year\\Drishyam\\model.tflearn"
-all_model_checkpoint_paths: "d:\\Amit\\Projects\\Final year\\Drishyam\\model.tflearn"
+model_checkpoint_path: "d:\\Amit\\Projects\\Final year\\Drishyam\\nlp\\model.tflearn"
+all_model_checkpoint_paths: "d:\\Amit\\Projects\\Final year\\Drishyam\\nlp\\model.tflearn"

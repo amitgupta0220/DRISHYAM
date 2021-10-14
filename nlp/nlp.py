@@ -10,13 +10,13 @@ import json
 import pickle
 
 
-with open("intents.json") as file:
+with open("nlp/intents.json") as file:
     data = json.load(file)
 
 # print(data["intents"])
 
 try:
-  with open("data.pickle","rb") as f:
+  with open("nlp/data.pickle","rb") as f:
       words, labels, training, output = pickle.load(f)
 except:
   words = []
@@ -61,7 +61,7 @@ except:
   training = np.array(training)
   output = np.array(output)
 
-  with open("data.pickle","wb") as f:
+  with open("nlp/data.pickle","wb") as f:
       pickle.dump((words, labels, training, output),f)
 
 
@@ -78,11 +78,11 @@ net = tflearn.regression(net)
 model = tflearn.DNN(net)
 
 try:
-  model.load("model.tflearn")
+  model.load("nlp/model.tflearn")
 except:
   model = tflearn.DNN(net)
   model.fit(training, output, n_epoch=1000, batch_size=10, show_metric=True)
-  model.save("model.tflearn")
+  model.save("nlp/model.tflearn")
 
 
 def bag_of_words(s, words):
@@ -109,7 +109,9 @@ def chat(query):
   for tg in data["intents"]:
       if tg["tag"] == tag:
           responses = tg['responses']
-  print(random.choice(responses))
+  if responses=="":
+    print("it is an article")
+  else:
+    print("Not an article")
 
-
-chat('hi')
+chat('This is a demo sentence for testing so for the purpose of tesing but also for fun')

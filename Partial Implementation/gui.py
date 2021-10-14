@@ -21,9 +21,9 @@ def screenForDeafMute():
 
   def validateInput():
     if clicked.get()!="English":
-      errorLabel.config(text="Ye kya gochi hai lavde",fg="red")
+      errorLabel.config(text="Please select a language first",fg="red")
     else :
-      errorLabel.config(text="Jaa nikal lavde",fg="green")
+      errorLabel.config(text="Starting the system...",fg="green")
   
   # for mute
   selectLanguage = Label(windowForMute, text='Select language *')
@@ -55,9 +55,9 @@ def screenForNormal():
 
   def validateInput():
     if clicked.get()!="ASL":
-      errorLabel.config(text="Ye kya gochi hai lavde",fg="red")
+      errorLabel.config(text="Please select a language first",fg="red")
     else :
-      errorLabel.config(text="Jaa nikal lavde",fg="green")
+      errorLabel.config(text="Starting the system...",fg="green")
       #call another screen and then close current window
       
   
