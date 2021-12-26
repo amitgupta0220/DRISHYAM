@@ -3,8 +3,8 @@ import glob
 import numpy as np
 
 # change this accordingly
-videoPaths = glob.glob(
-    'C:/Users/Dell/Desktop/DataSet/VID_20200222_194812_trim.mp4')
+# videoPaths = glob.glob(
+#     'C:/Users/Dell/Desktop/DataSet/VID_20200222_194812_trim.mp4')
 
 
 # for videoPath in videoPaths:
@@ -19,32 +19,40 @@ videoPaths = glob.glob(
 #             ret, frame = cap.read()
 #             count += np.random.randint(1, high=9999)
 
-    # actWriter(videoPath)
+# actWriter(videoPath)
 
 
 def extractFrame():
     cap = cv2.VideoCapture(
-        'D:/Amit/E-YIC/Tp2/VID_20200225_140002.mp4')  # vid name
+        'D:/Amit/Projects/Final year/Drishyam/ACTIONS/how/VID_20200225_140002.mp4')  # vid name
     ret, frame = cap.read()
-    count = 3824  # change after first itration
+    count = 0  # change after first itration
     ret = True
     while ret:
-        cv2.imwrite('D:/Amit/E-YIC/Tp2/wave_label/wave (%d).jpg' %
+        cv2.imwrite('D:/Amit/Projects/Final year/Drishyam/ACTIONS/how/how_label/how_label (%d).jpg' %
                     count, frame)  # change this accordingly (frame write path)
         ret, frame = cap.read()
-        count += 2
-# extractFrame()
+        count += 1
 
 # extractFrame() #call this to extract frame
 
 
 def reSize():
-    imgPaths = glob.glob('D:/Amit/E-YIC/Tp2/wave_label/*.jpg')
-    count = 1255
+    imgPaths = glob.glob(
+        'D:/Amit/Projects/Final year/Drishyam/ACTIONS/how/how_label/*.jpg')
+    count = 0
     for imgPath in imgPaths:
         img = cv2.imread(imgPath)
-        img = cv2.resize(img, (600, 337))
+        img = cv2.resize(img, (640, 480))
         cv2.imwrite(
-            'D:/Amit/E-YIC/Tp2/wave_label/wave/wave (%d).jpg' % count, img)
+            'D:/Amit/Projects/Final year/Drishyam/ACTIONS/how/how_label/how_label (%d).jpg' % count, img)
         count += 1
-# reSize()
+
+
+reSize()
+
+# video record
+# save in respective action ka folder
+# extract frames according to count and change it accordingly
+# after extracting all frames then resize it(check order of images first)
+# then labelling
